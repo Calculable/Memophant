@@ -15,6 +15,8 @@
 		3D3BAA6D26F30F0B00D4F40B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3BAA6B26F30F0B00D4F40B /* LaunchScreen.storyboard */; };
 		3D3BAA7826F30F0B00D4F40B /* MemophantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAA7726F30F0B00D4F40B /* MemophantTests.swift */; };
 		3D3BAA8326F30F0B00D4F40B /* MemophantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAA8226F30F0B00D4F40B /* MemophantUITests.swift */; };
+		3D87F91826F320A100AEB79C /* MemoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D87F91626F320A100AEB79C /* MemoModel.xcdatamodeld */; };
+		3D87F91A26F3216A00AEB79C /* MemoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87F91926F3216A00AEB79C /* MemoRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		3D3BAA7E26F30F0B00D4F40B /* MemophantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemophantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D3BAA8226F30F0B00D4F40B /* MemophantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemophantUITests.swift; sourceTree = "<group>"; };
 		3D3BAA8426F30F0B00D4F40B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D87F91726F320A100AEB79C /* MemoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MemoModel.xcdatamodel; sourceTree = "<group>"; };
+		3D87F91926F3216A00AEB79C /* MemoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				3D3BAA6926F30F0B00D4F40B /* Assets.xcassets */,
 				3D3BAA6B26F30F0B00D4F40B /* LaunchScreen.storyboard */,
 				3D3BAA6E26F30F0B00D4F40B /* Info.plist */,
+				3D87F91626F320A100AEB79C /* MemoModel.xcdatamodeld */,
+				3D87F91926F3216A00AEB79C /* MemoRepository.swift */,
 			);
 			path = Memophant;
 			sourceTree = "<group>";
@@ -259,7 +265,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D3BAA6526F30F0700D4F40B /* ViewController.swift in Sources */,
+				3D87F91826F320A100AEB79C /* MemoModel.xcdatamodeld in Sources */,
 				3D3BAA6126F30F0700D4F40B /* AppDelegate.swift in Sources */,
+				3D87F91A26F3216A00AEB79C /* MemoRepository.swift in Sources */,
 				3D3BAA6326F30F0700D4F40B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +601,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3D87F91626F320A100AEB79C /* MemoModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3D87F91726F320A100AEB79C /* MemoModel.xcdatamodel */,
+			);
+			currentVersion = 3D87F91726F320A100AEB79C /* MemoModel.xcdatamodel */;
+			path = MemoModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3D3BAA5526F30F0700D4F40B /* Project object */;
 }
