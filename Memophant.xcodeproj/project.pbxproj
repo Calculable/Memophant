@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D3BAA6126F30F0700D4F40B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAA6026F30F0700D4F40B /* AppDelegate.swift */; };
+		3D3BAA6326F30F0700D4F40B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAA6226F30F0700D4F40B /* SceneDelegate.swift */; };
+		3D3BAA6526F30F0700D4F40B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAA6426F30F0700D4F40B /* ViewController.swift */; };
+		3D3BAA6826F30F0700D4F40B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3BAA6626F30F0700D4F40B /* Main.storyboard */; };
+		3D3BAA6A26F30F0B00D4F40B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D3BAA6926F30F0B00D4F40B /* Assets.xcassets */; };
+		3D3BAA6D26F30F0B00D4F40B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3BAA6B26F30F0B00D4F40B /* LaunchScreen.storyboard */; };
+		3D3BAA7826F30F0B00D4F40B /* MemophantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAA7726F30F0B00D4F40B /* MemophantTests.swift */; };
+		3D3BAA8326F30F0B00D4F40B /* MemophantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAA8226F30F0B00D4F40B /* MemophantUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D3BAA7426F30F0B00D4F40B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D3BAA5526F30F0700D4F40B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D3BAA5C26F30F0700D4F40B;
+			remoteInfo = Memophant;
+		};
+		3D3BAA7F26F30F0B00D4F40B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D3BAA5526F30F0700D4F40B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D3BAA5C26F30F0700D4F40B;
+			remoteInfo = Memophant;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3D3BAA5D26F30F0700D4F40B /* Memophant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memophant.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D3BAA6026F30F0700D4F40B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3D3BAA6226F30F0700D4F40B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3D3BAA6426F30F0700D4F40B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3D3BAA6726F30F0700D4F40B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3D3BAA6926F30F0B00D4F40B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D3BAA6C26F30F0B00D4F40B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3D3BAA6E26F30F0B00D4F40B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D3BAA7326F30F0B00D4F40B /* MemophantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemophantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D3BAA7726F30F0B00D4F40B /* MemophantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemophantTests.swift; sourceTree = "<group>"; };
+		3D3BAA7926F30F0B00D4F40B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D3BAA7E26F30F0B00D4F40B /* MemophantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemophantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D3BAA8226F30F0B00D4F40B /* MemophantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemophantUITests.swift; sourceTree = "<group>"; };
+		3D3BAA8426F30F0B00D4F40B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D3BAA5A26F30F0700D4F40B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D3BAA7026F30F0B00D4F40B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D3BAA7B26F30F0B00D4F40B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D3BAA5426F30F0700D4F40B = {
+			isa = PBXGroup;
+			children = (
+				3D3BAA5F26F30F0700D4F40B /* Memophant */,
+				3D3BAA7626F30F0B00D4F40B /* MemophantTests */,
+				3D3BAA8126F30F0B00D4F40B /* MemophantUITests */,
+				3D3BAA5E26F30F0700D4F40B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3D3BAA5E26F30F0700D4F40B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D3BAA5D26F30F0700D4F40B /* Memophant.app */,
+				3D3BAA7326F30F0B00D4F40B /* MemophantTests.xctest */,
+				3D3BAA7E26F30F0B00D4F40B /* MemophantUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D3BAA5F26F30F0700D4F40B /* Memophant */ = {
+			isa = PBXGroup;
+			children = (
+				3D3BAA6026F30F0700D4F40B /* AppDelegate.swift */,
+				3D3BAA6226F30F0700D4F40B /* SceneDelegate.swift */,
+				3D3BAA6426F30F0700D4F40B /* ViewController.swift */,
+				3D3BAA6626F30F0700D4F40B /* Main.storyboard */,
+				3D3BAA6926F30F0B00D4F40B /* Assets.xcassets */,
+				3D3BAA6B26F30F0B00D4F40B /* LaunchScreen.storyboard */,
+				3D3BAA6E26F30F0B00D4F40B /* Info.plist */,
+			);
+			path = Memophant;
+			sourceTree = "<group>";
+		};
+		3D3BAA7626F30F0B00D4F40B /* MemophantTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D3BAA7726F30F0B00D4F40B /* MemophantTests.swift */,
+				3D3BAA7926F30F0B00D4F40B /* Info.plist */,
+			);
+			path = MemophantTests;
+			sourceTree = "<group>";
+		};
+		3D3BAA8126F30F0B00D4F40B /* MemophantUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3D3BAA8226F30F0B00D4F40B /* MemophantUITests.swift */,
+				3D3BAA8426F30F0B00D4F40B /* Info.plist */,
+			);
+			path = MemophantUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D3BAA5C26F30F0700D4F40B /* Memophant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D3BAA8726F30F0B00D4F40B /* Build configuration list for PBXNativeTarget "Memophant" */;
+			buildPhases = (
+				3D3BAA5926F30F0700D4F40B /* Sources */,
+				3D3BAA5A26F30F0700D4F40B /* Frameworks */,
+				3D3BAA5B26F30F0700D4F40B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Memophant;
+			productName = Memophant;
+			productReference = 3D3BAA5D26F30F0700D4F40B /* Memophant.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3D3BAA7226F30F0B00D4F40B /* MemophantTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D3BAA8A26F30F0B00D4F40B /* Build configuration list for PBXNativeTarget "MemophantTests" */;
+			buildPhases = (
+				3D3BAA6F26F30F0B00D4F40B /* Sources */,
+				3D3BAA7026F30F0B00D4F40B /* Frameworks */,
+				3D3BAA7126F30F0B00D4F40B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D3BAA7526F30F0B00D4F40B /* PBXTargetDependency */,
+			);
+			name = MemophantTests;
+			productName = MemophantTests;
+			productReference = 3D3BAA7326F30F0B00D4F40B /* MemophantTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3D3BAA7D26F30F0B00D4F40B /* MemophantUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D3BAA8D26F30F0B00D4F40B /* Build configuration list for PBXNativeTarget "MemophantUITests" */;
+			buildPhases = (
+				3D3BAA7A26F30F0B00D4F40B /* Sources */,
+				3D3BAA7B26F30F0B00D4F40B /* Frameworks */,
+				3D3BAA7C26F30F0B00D4F40B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D3BAA8026F30F0B00D4F40B /* PBXTargetDependency */,
+			);
+			name = MemophantUITests;
+			productName = MemophantUITests;
+			productReference = 3D3BAA7E26F30F0B00D4F40B /* MemophantUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D3BAA5526F30F0700D4F40B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					3D3BAA5C26F30F0700D4F40B = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					3D3BAA7226F30F0B00D4F40B = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 3D3BAA5C26F30F0700D4F40B;
+					};
+					3D3BAA7D26F30F0B00D4F40B = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 3D3BAA5C26F30F0700D4F40B;
+					};
+				};
+			};
+			buildConfigurationList = 3D3BAA5826F30F0700D4F40B /* Build configuration list for PBXProject "Memophant" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D3BAA5426F30F0700D4F40B;
+			productRefGroup = 3D3BAA5E26F30F0700D4F40B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D3BAA5C26F30F0700D4F40B /* Memophant */,
+				3D3BAA7226F30F0B00D4F40B /* MemophantTests */,
+				3D3BAA7D26F30F0B00D4F40B /* MemophantUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D3BAA5B26F30F0700D4F40B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D3BAA6D26F30F0B00D4F40B /* LaunchScreen.storyboard in Resources */,
+				3D3BAA6A26F30F0B00D4F40B /* Assets.xcassets in Resources */,
+				3D3BAA6826F30F0700D4F40B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D3BAA7126F30F0B00D4F40B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D3BAA7C26F30F0B00D4F40B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D3BAA5926F30F0700D4F40B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D3BAA6526F30F0700D4F40B /* ViewController.swift in Sources */,
+				3D3BAA6126F30F0700D4F40B /* AppDelegate.swift in Sources */,
+				3D3BAA6326F30F0700D4F40B /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D3BAA6F26F30F0B00D4F40B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D3BAA7826F30F0B00D4F40B /* MemophantTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D3BAA7A26F30F0B00D4F40B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D3BAA8326F30F0B00D4F40B /* MemophantUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D3BAA7526F30F0B00D4F40B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D3BAA5C26F30F0700D4F40B /* Memophant */;
+			targetProxy = 3D3BAA7426F30F0B00D4F40B /* PBXContainerItemProxy */;
+		};
+		3D3BAA8026F30F0B00D4F40B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D3BAA5C26F30F0700D4F40B /* Memophant */;
+			targetProxy = 3D3BAA7F26F30F0B00D4F40B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3D3BAA6626F30F0700D4F40B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D3BAA6726F30F0700D4F40B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3D3BAA6B26F30F0B00D4F40B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D3BAA6C26F30F0B00D4F40B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3D3BAA8526F30F0B00D4F40B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3D3BAA8626F30F0B00D4F40B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3D3BAA8826F30F0B00D4F40B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FB3RP3NRT7;
+				INFOPLIST_FILE = Memophant/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ch.janhuber.Memophant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3D3BAA8926F30F0B00D4F40B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FB3RP3NRT7;
+				INFOPLIST_FILE = Memophant/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ch.janhuber.Memophant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3D3BAA8B26F30F0B00D4F40B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FB3RP3NRT7;
+				INFOPLIST_FILE = MemophantTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ch.janhuber.MemophantTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Memophant.app/Memophant";
+			};
+			name = Debug;
+		};
+		3D3BAA8C26F30F0B00D4F40B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FB3RP3NRT7;
+				INFOPLIST_FILE = MemophantTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ch.janhuber.MemophantTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Memophant.app/Memophant";
+			};
+			name = Release;
+		};
+		3D3BAA8E26F30F0B00D4F40B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FB3RP3NRT7;
+				INFOPLIST_FILE = MemophantUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ch.janhuber.MemophantUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Memophant;
+			};
+			name = Debug;
+		};
+		3D3BAA8F26F30F0B00D4F40B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FB3RP3NRT7;
+				INFOPLIST_FILE = MemophantUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ch.janhuber.MemophantUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Memophant;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D3BAA5826F30F0700D4F40B /* Build configuration list for PBXProject "Memophant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D3BAA8526F30F0B00D4F40B /* Debug */,
+				3D3BAA8626F30F0B00D4F40B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D3BAA8726F30F0B00D4F40B /* Build configuration list for PBXNativeTarget "Memophant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D3BAA8826F30F0B00D4F40B /* Debug */,
+				3D3BAA8926F30F0B00D4F40B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D3BAA8A26F30F0B00D4F40B /* Build configuration list for PBXNativeTarget "MemophantTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D3BAA8B26F30F0B00D4F40B /* Debug */,
+				3D3BAA8C26F30F0B00D4F40B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D3BAA8D26F30F0B00D4F40B /* Build configuration list for PBXNativeTarget "MemophantUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D3BAA8E26F30F0B00D4F40B /* Debug */,
+				3D3BAA8F26F30F0B00D4F40B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D3BAA5526F30F0700D4F40B /* Project object */;
+}
