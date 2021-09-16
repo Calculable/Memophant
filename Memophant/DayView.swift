@@ -12,6 +12,7 @@ final class DayView: UIView {
     
         
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var time: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,6 +28,8 @@ final class DayView: UIView {
         guard let view = self.loadViewFromNib(nibName: "DayView") else { return }
         view.frame = self.bounds
         self.addSubview(view)
+        time?.layer.masksToBounds = true
+        time?.layer.cornerRadius = 8.0
     }
     
     func configureView(text: String) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3AV-gz-mcr">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,27 +13,27 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Memophant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJx-AH-Reu">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="1124" width="834" height="50"/>
                                 <items>
                                     <barButtonItem title="&lt; August 2021" image="chevron.backward" catalog="system" id="6WV-3s-gjf"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rwO-Fw-jpU"/>
-                                    <barButtonItem title="Item" image="plus" catalog="system" id="6dT-Qa-Ke9"/>
+                                    <barButtonItem title="Current" id="3Fg-Z2-iAB"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="F4O-mH-wAa"/>
                                     <barButtonItem title="Oktober 2021 &gt;" image="chevron.forward" catalog="system" id="JlJ-rM-owf"/>
                                 </items>
                             </toolbar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9n-iv-0k3">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="102" width="834" height="1022"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="eAg-yd-gOq">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="685"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="834" height="685"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hj9-nR-3Mb" userLabel="Day">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="685"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="834" height="685"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                         </subviews>
@@ -52,7 +52,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         <constraints>
                             <constraint firstItem="v9n-iv-0k3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2rt-Xe-nTu"/>
                             <constraint firstItem="v9n-iv-0k3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DFa-pS-zgY"/>
@@ -63,7 +63,14 @@
                             <constraint firstItem="v9n-iv-0k3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tjz-da-jL3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="September 2021" largeTitleDisplayMode="always" id="Grq-mM-bKH"/>
+                    <navigationItem key="navigationItem" title="September 2021" largeTitleDisplayMode="always" id="Grq-mM-bKH">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="Rm1-5H-4T0">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="6dT-Qa-Ke9">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dayStackView" destination="eAg-yd-gOq" id="CpE-JG-O11"/>
                     </connections>
@@ -78,8 +85,11 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3AV-gz-mcr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="xCR-YL-l05">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -97,6 +107,9 @@
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
