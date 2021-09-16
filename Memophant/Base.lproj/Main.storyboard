@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3AV-gz-mcr">
-    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Memophant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJx-AH-Reu">
-                                <rect key="frame" x="0.0" y="1124" width="834" height="50"/>
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <items>
                                     <barButtonItem title="&lt; August 2021" image="chevron.backward" catalog="system" id="6WV-3s-gjf"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rwO-Fw-jpU"/>
@@ -27,13 +27,13 @@
                                 </items>
                             </toolbar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9n-iv-0k3">
-                                <rect key="frame" x="0.0" y="102" width="834" height="1022"/>
+                                <rect key="frame" x="0.0" y="96" width="320" height="340"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="eAg-yd-gOq">
-                                        <rect key="frame" x="0.0" y="0.0" width="834" height="685"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="685"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hj9-nR-3Mb" userLabel="Day">
-                                                <rect key="frame" x="0.0" y="0.0" width="834" height="685"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="685"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                         </subviews>
@@ -69,6 +69,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="6dT-Qa-Ke9">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="FIV-Wn-yrP" kind="show" id="KaD-eh-Xif"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -79,13 +82,70 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="93.75"/>
         </scene>
+        <!--Add Memo View Controller-->
+        <scene sceneID="aSA-S9-kp5">
+            <objects>
+                <viewController id="FIV-Wn-yrP" customClass="AddMemoViewController" customModule="Memophant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0UM-DW-Wxy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Elephant" translatesAutoresizingMaskIntoConstraints="NO" id="ZbM-iS-Edw">
+                                <rect key="frame" x="16" y="60" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dk9-4C-L9I"/>
+                                    <constraint firstAttribute="width" constant="50" id="lf0-Mq-Tin"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0gC-KB-1tu">
+                                <rect key="frame" x="74" y="91" width="230" height="90"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="Q8l-b5-4Jz"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What should I remember? " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnA-hG-xC5">
+                                <rect key="frame" x="74" y="60" width="230" height="23"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Kx-D5-Mmr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZbM-iS-Edw" firstAttribute="leading" secondItem="2Kx-D5-Mmr" secondAttribute="leading" constant="16" id="5HE-ct-oNc"/>
+                            <constraint firstItem="2Kx-D5-Mmr" firstAttribute="trailing" secondItem="0gC-KB-1tu" secondAttribute="trailing" constant="16" id="6Ic-MX-frd"/>
+                            <constraint firstItem="ZbM-iS-Edw" firstAttribute="top" secondItem="2Kx-D5-Mmr" secondAttribute="top" constant="16" id="C4n-Jg-PpC"/>
+                            <constraint firstItem="0gC-KB-1tu" firstAttribute="leading" secondItem="NnA-hG-xC5" secondAttribute="leading" id="EBe-89-9L8"/>
+                            <constraint firstItem="2Kx-D5-Mmr" firstAttribute="trailing" secondItem="NnA-hG-xC5" secondAttribute="trailing" constant="16" id="fg7-m7-HV4"/>
+                            <constraint firstItem="NnA-hG-xC5" firstAttribute="leading" secondItem="ZbM-iS-Edw" secondAttribute="trailing" constant="8" symbolic="YES" id="p25-ho-Nqe"/>
+                            <constraint firstItem="0gC-KB-1tu" firstAttribute="top" secondItem="NnA-hG-xC5" secondAttribute="bottom" constant="8" symbolic="YES" id="s6Z-H8-dyK"/>
+                            <constraint firstItem="NnA-hG-xC5" firstAttribute="top" secondItem="ZbM-iS-Edw" secondAttribute="top" id="vv4-AJ-UVI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Q0F-0Y-j6q">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="4BW-Bd-kb9"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentTextView" destination="0gC-KB-1tu" id="c02-Hx-seC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGK-8B-MEP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2011.875" y="126.25"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="8h3-5q-fGJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3AV-gz-mcr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="xCR-YL-l05">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="102"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,9 +162,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Elephant" width="227.75799560546875" height="186.77799987792969"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="chevron.forward" catalog="system" width="96" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

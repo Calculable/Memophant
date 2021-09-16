@@ -13,14 +13,38 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        MemoRepository.shared.deleteAllMemos()
+        
+        let memos0 = MemoRepository.shared.allMemos
+        
+        
+        memos0.forEach { memo in
+            print(memo.content)
+            
+        }
+        
+        
+        MemoRepository.shared.readDummyMemos().forEach { memo in
+            MemoRepository.shared.updateMemo(memo: memo)
+        }
                
         
-        dayStackView.backgroundColor = .red
-
-        for day in 1...30 {
+        let memos = MemoRepository.shared.allMemos
+        
+        
+        memos.forEach { memo in
+            print(memo.content)
+            
+        }
+        
+        let dayView = DayView()
+        dayView.configureView(day: "1", memos: memos)
+        dayStackView.addArrangedSubview(dayView)
+        
+        for day in 2...30 {
         
             let dayView = DayView()
-            dayView.configureView(text: "\(day)")
+            dayView.configureDummyView(day: "\(day)")
             dayStackView.addArrangedSubview(dayView)
 
         }
