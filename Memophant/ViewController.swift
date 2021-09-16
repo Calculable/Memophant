@@ -9,9 +9,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var dayStackView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+               
+        
+        dayStackView.backgroundColor = .red
+
+        for day in 1...30 {
+        
+            let dayView = DayView()
+            dayView.configureView(text: "\(day)")
+            dayStackView.addArrangedSubview(dayView)
+
+        }
+        
+        
+       
+
     }
     
     

@@ -17,6 +17,9 @@
 		3D3BAA8326F30F0B00D4F40B /* MemophantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3BAA8226F30F0B00D4F40B /* MemophantUITests.swift */; };
 		3D87F91826F320A100AEB79C /* MemoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D87F91626F320A100AEB79C /* MemoModel.xcdatamodeld */; };
 		3D87F91A26F3216A00AEB79C /* MemoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87F91926F3216A00AEB79C /* MemoRepository.swift */; };
+		3D87F92026F343A600AEB79C /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87F91F26F343A600AEB79C /* DayView.swift */; };
+		3D87F92426F34B9600AEB79C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87F92326F34B9600AEB79C /* UIViewExtension.swift */; };
+		3DE8715026F3507F00099C3F /* DayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE8714F26F3507F00099C3F /* DayView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		3D3BAA8426F30F0B00D4F40B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D87F91726F320A100AEB79C /* MemoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MemoModel.xcdatamodel; sourceTree = "<group>"; };
 		3D87F91926F3216A00AEB79C /* MemoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRepository.swift; sourceTree = "<group>"; };
+		3D87F91F26F343A600AEB79C /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		3D87F92326F34B9600AEB79C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		3DE8714F26F3507F00099C3F /* DayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,9 @@
 				3D3BAA6E26F30F0B00D4F40B /* Info.plist */,
 				3D87F91626F320A100AEB79C /* MemoModel.xcdatamodeld */,
 				3D87F91926F3216A00AEB79C /* MemoRepository.swift */,
+				3D87F91F26F343A600AEB79C /* DayView.swift */,
+				3D87F92326F34B9600AEB79C /* UIViewExtension.swift */,
+				3DE8714F26F3507F00099C3F /* DayView.xib */,
 			);
 			path = Memophant;
 			sourceTree = "<group>";
@@ -238,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D3BAA6D26F30F0B00D4F40B /* LaunchScreen.storyboard in Resources */,
+				3DE8715026F3507F00099C3F /* DayView.xib in Resources */,
 				3D3BAA6A26F30F0B00D4F40B /* Assets.xcassets in Resources */,
 				3D3BAA6826F30F0700D4F40B /* Main.storyboard in Resources */,
 			);
@@ -265,8 +275,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D3BAA6526F30F0700D4F40B /* ViewController.swift in Sources */,
+				3D87F92026F343A600AEB79C /* DayView.swift in Sources */,
 				3D87F91826F320A100AEB79C /* MemoModel.xcdatamodeld in Sources */,
 				3D3BAA6126F30F0700D4F40B /* AppDelegate.swift in Sources */,
+				3D87F92426F34B9600AEB79C /* UIViewExtension.swift in Sources */,
 				3D87F91A26F3216A00AEB79C /* MemoRepository.swift in Sources */,
 				3D3BAA6326F30F0700D4F40B /* SceneDelegate.swift in Sources */,
 			);
