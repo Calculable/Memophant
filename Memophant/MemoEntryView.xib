@@ -38,18 +38,20 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbg-6Q-kzT">
-                            <rect key="frame" x="80" y="812" width="314" height="50"/>
+                            <rect key="frame" x="80" y="812" width="30" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="4hR-cz-aNT"/>
                             </constraints>
                             <state key="normal" title="Edit">
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </state>
+                            <connections>
+                                <action selector="edit:" destination="-1" eventType="touchUpInside" id="I4r-7R-2XB"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="cbg-6Q-kzT" secondAttribute="bottom" id="BpR-SP-bKd"/>
-                        <constraint firstAttribute="trailing" secondItem="cbg-6Q-kzT" secondAttribute="trailing" constant="20" symbolic="YES" id="ITZ-vI-tBt"/>
                         <constraint firstAttribute="trailing" secondItem="MWv-m9-KuA" secondAttribute="trailing" constant="20" symbolic="YES" id="MEw-Jo-vSK"/>
                         <constraint firstItem="MWv-m9-KuA" firstAttribute="leading" secondItem="xI6-qk-zyR" secondAttribute="leading" constant="80" id="Ppu-D8-P31"/>
                         <constraint firstItem="OB5-dU-4Om" firstAttribute="leading" secondItem="xI6-qk-zyR" secondAttribute="leading" id="RcG-oB-BHJ"/>
@@ -70,7 +72,7 @@
                 <constraint firstItem="xI6-qk-zyR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uT1-eg-iFN"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="133" y="135"/>
+            <point key="canvasLocation" x="131.8840579710145" y="134.59821428571428"/>
         </view>
     </objects>
     <resources>

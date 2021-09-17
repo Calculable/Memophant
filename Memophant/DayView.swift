@@ -14,6 +14,9 @@ final class DayView: UIView {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var memoEntryStackView: UIStackView!
     
+    var viewControllerDelegate: ViewController? = nil
+
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configureView()
@@ -37,41 +40,19 @@ final class DayView: UIView {
     }
     
     
-    func configureDummyView(day: String) {
-        label.text = day
-        
-        let entry1 = MemoEntryView()
-        entry1.configureView(time: "9:41", content: "Test1")
-        
-        let entry2 = MemoEntryView()
-        entry1.configureView(time: "8:41", content: "Test2")
-        
-        memoEntryStackView.addArrangedSubview(entry1)
-        memoEntryStackView.addArrangedSubview(entry2)
-    }
+  
     
-    
-    func configureView(day: String, memos: [Memo]) {
+    func configureView(day: String, memos: [Memo], viewControllerDelegate: ViewController) {
         label.text = day
         
         
         memos.forEach { memo in
             let entry = MemoEntryView()
             
-            // get the current date and time
-            let currentDateTime = Date()
 
-            // initialize the date formatter and set the style
-            let formatter = DateFormatter()
-            formatter.timeStyle = .short
-            formatter.dateStyle = .none
-
-            // get the date time String from the date object
+           
             
-            let timeString = formatter.string(from: memo.date!) // October 8, 2016 at 10:48:53 PM
-            print(timeString)
-            
-            entry.configureView(time: timeString, content: memo.content ?? "")
+            entry.configureView(memo: memo, viewControllerDelegate: viewControllerDelegate)
             memoEntryStackView.addArrangedSubview(entry)
         }
        

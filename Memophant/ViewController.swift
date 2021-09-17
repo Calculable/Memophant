@@ -16,18 +16,38 @@ class ViewController: UIViewController {
     var orderedMemoDictionaryKeys : [MonthAndYear] = []
     var currentMemoDictionaryKeyIndex = 0
     
+    var showEditDialog = false
+    var currentEditingMemo: Memo? = nil
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier  == "showAddMemoView" {
+            
             let destination = segue.destination as! AddMemoViewController
             destination.viewControllerDelegate = self
+            
+            if (showEditDialog) {
+                destination.editingMode = true
+                destination.currentEditingMemo = currentEditingMemo
+            } else {
+                destination.editingMode = false
+                destination.currentEditingMemo = nil
+            }
+            
         }
     }
     
     @IBAction func addMemo(_ sender: Any) {
-        performSegue(withIdentifier: "showAddMemoView", sender: self)
+        showEditDialog = false
 
+        performSegue(withIdentifier: "showAddMemoView", sender: self)
+    }
+    
+    func editMemo(memo: Memo) {
+        showEditDialog = true
+        currentEditingMemo = memo
+        performSegue(withIdentifier: "showAddMemoView", sender: self)
     }
     
     
@@ -113,7 +133,7 @@ class ViewController: UIViewController {
                 
                 //Gruppe hinzufügen
                 let dayView = DayView()
-                dayView.configureView(day: "\(currentDay!)", memos: currentGroupedEntrys)
+                dayView.configureView(day: "\(currentDay!)", memos: currentGroupedEntrys, viewControllerDelegate: self)
                 dayStackView.addArrangedSubview(dayView)
                 
                 currentGroupedEntrys.removeAll()
@@ -129,7 +149,7 @@ class ViewController: UIViewController {
         
         //Gruppe hinzufügen
         let dayView = DayView()
-        dayView.configureView(day: "\(currentDay!)", memos: currentGroupedEntrys)
+        dayView.configureView(day: "\(currentDay!)", memos: currentGroupedEntrys, viewControllerDelegate: self)
         dayStackView.addArrangedSubview(dayView)
         
         
@@ -218,6 +238,8 @@ class ViewController: UIViewController {
         currentMemoDictionaryKeyIndex -= 1
             updateView()
     }
+    
+  
     
 }
 
