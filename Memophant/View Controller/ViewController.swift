@@ -2,24 +2,59 @@ import UIKit
 
 
 class ViewController: UIViewController {
-
+    
+    //MARK: Outlets
     @IBOutlet weak var dayStackView: UIStackView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var goToNewestButton: UIBarButtonItem!
+    @IBOutlet weak var forwardButton: UIBarButtonItem!
     
-    var memosPerMonth: [MonthAndYear: [Memo]] = [:]
-    var orderedMemoDictionaryKeys : [MonthAndYear] = []
-    var currentMemoDictionaryKeyIndex = 0
+    //MARK: Constants
+    let showAddMemoViewSegueIdentifier = "showAddMemoView"
     
+    //MARK: Properties
+    var memoViewModel = MemoViewModel()
     var showEditDialog = false
     var currentEditingMemo: Memo? = nil
     
-    @IBOutlet weak var scrollView: UIScrollView!
+    //MARK: Actions
+    @IBAction func addMemo(_ sender: Any) {
+        showEditDialog = false
+        performSegue(withIdentifier: showAddMemoViewSegueIdentifier, sender: self)
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        memoViewModel.currentMemoDictionaryKeyIndex += 1
+        updateView()
+    }
+    
+    @IBAction func newest(_ sender: Any) {
+        memoViewModel.currentMemoDictionaryKeyIndex = 0
+        updateView()
+    }
+    
+    @IBAction func forward(_ sender: Any) {
+        memoViewModel.currentMemoDictionaryKeyIndex -= 1
+        updateView()
+    }
+    
+    //MARK: Superclass methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if (UserDefaultsService.checkOrSetFirstAppStart() && MemoRepository.shared.readMemos.isEmpty) {
+            WelcomeMemoRepository.createWelcomeMemos()
+        }
+        
+        updateView(shouldRefreshMemos: true)
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier  == "showAddMemoView" {
-            
+        if segue.identifier  == showAddMemoViewSegueIdentifier {
             let destination = segue.destination as! AddMemoViewController
             destination.viewControllerDelegate = self
-            
             if (showEditDialog) {
                 destination.editingMode = true
                 destination.currentEditingMemo = currentEditingMemo
@@ -27,222 +62,97 @@ class ViewController: UIViewController {
                 destination.editingMode = false
                 destination.currentEditingMemo = nil
             }
-            
         }
     }
     
-    @IBAction func addMemo(_ sender: Any) {
-        showEditDialog = false
-
-        performSegue(withIdentifier: "showAddMemoView", sender: self)
-    }
     
-    func editMemo(memo: Memo) {
-        showEditDialog = true
-        currentEditingMemo = memo
-        performSegue(withIdentifier: "showAddMemoView", sender: self)
-    }
-    
-    
-    @IBOutlet weak var backButton: UIBarButtonItem!
-    @IBOutlet weak var goToNewestButton: UIBarButtonItem!
-    @IBOutlet weak var forwardButton: UIBarButtonItem!
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
- 
-        if (isFirstAppStartEver() && MemoRepository.shared.readMemos.isEmpty) {
-            loadDummyMemos()
-        }
-
-        updateView(shouldRefreshMemos: true)
-    
-    }
-    
-    func isFirstAppStartEver() -> Bool {
-        let firstAppStart = UserDefaults.standard.object(forKey: "firstAppStart")
-       
-        if (firstAppStart == nil) {
-            UserDefaults.standard.set(false, forKey: "firstAppStart")
-            return true
-        }
-        
-        return false
-    }
-    
-    func refreshMemos(shouldJumpToFirstDay: Bool) {
-        let memos = MemoRepository.shared.readMemos
-        
-        memosPerMonth = splitMemosPerMonth(memos: memos)
-        orderedMemoDictionaryKeys = memosPerMonth.keys.sorted { (a,b) in
-            
-            if a.year > b.year {
-                return true
-            }
-            
-            if (a.year == b.year) {
-                return a.month > b.month
-            }
-            
-            return false
-            
-        }
-        
-        if (shouldJumpToFirstDay || currentMemoDictionaryKeyIndex >= orderedMemoDictionaryKeys.count) {
-            currentMemoDictionaryKeyIndex = 0
-        }
-        
-    }
-    
-    func updateButtonEnabledState() {
-        backButton.isEnabled = currentMemoDictionaryKeyIndex < orderedMemoDictionaryKeys.count - 1
-        forwardButton.isEnabled = currentMemoDictionaryKeyIndex > 0
-        goToNewestButton.isEnabled = currentMemoDictionaryKeyIndex != 0
-
-    }
-    
-    func updateView(shouldRefreshMemos: Bool = false, shouldJumpToFirstDay: Bool = false) {
+    //MARK: View Methods
+    private func updateView(shouldRefreshMemos: Bool = false, shouldJumpToFirstDay: Bool = false) {
         
         if (shouldRefreshMemos) {
             refreshMemos(shouldJumpToFirstDay: shouldJumpToFirstDay)
         }
         
         updateButtonEnabledState()
-        dayStackView.isHidden = orderedMemoDictionaryKeys.isEmpty
-        
-        
-        if orderedMemoDictionaryKeys.count == 0 {
-            return
-        } else {
-            
-            
-            
-            dayStackView.removeAllArrangedSubviews()
-        
-        let memosForSelectedMonthKey = orderedMemoDictionaryKeys[currentMemoDictionaryKeyIndex]
-        let memosForSelectedMonth = memosPerMonth[memosForSelectedMonthKey]
-        
-        //check which entrys should be grouped together
-        
-        var currentGroupedEntrys: [Memo] =  []
-        var currentDay: Int? = nil
-        
-        
-        memosForSelectedMonth!.forEach {memo in
-            
-            if (currentDay == nil) {
-                currentDay = getDayFromMemo(memo: memo)
-                currentGroupedEntrys.append(memo)
-            } else if (currentDay == getDayFromMemo(memo: memo)) {
-                currentDay = getDayFromMemo(memo: memo)
-                currentGroupedEntrys.append(memo)
-            } else {
-                
-                //Gruppe hinzufügen
-                let dayView = DayView()
-                dayView.configureView(day: "\(currentDay!)", memos: currentGroupedEntrys, viewControllerDelegate: self)
-                dayStackView.addArrangedSubview(dayView)
-                
-                currentGroupedEntrys.removeAll()
-                
-                currentDay = getDayFromMemo(memo: memo)
-                currentGroupedEntrys.append(memo)
-                
-                
-            }
-            
-        
-            
-            
-        }
-        
-        //Gruppe hinzufügen
-        let dayView = DayView()
-        dayView.configureView(day: "\(currentDay!)", memos: currentGroupedEntrys, viewControllerDelegate: self)
-        dayStackView.addArrangedSubview(dayView)
-        
-        
-        //Set Navbar Title
-        
-        self.title = "\(monthName(monthNumber: memosForSelectedMonthKey.month)) \(memosForSelectedMonthKey.year)"
-            
-        }
-        
-        //Scroll on Top of Scroll View
-        
-       
-        
+        dayStackView.isHidden = memoViewModel.orderedMemoDictionaryKeys.isEmpty
+        showMemosForSelectedMonth()
         
         if (shouldJumpToFirstDay) {
             scrollView.scrollToTop()
         }
         
+    }
+    
+    private func updateButtonEnabledState() {
+        backButton.isEnabled = memoViewModel.currentMemoDictionaryKeyIndex < memoViewModel.orderedMemoDictionaryKeys.count - 1
+        forwardButton.isEnabled = memoViewModel.currentMemoDictionaryKeyIndex > 0
+        goToNewestButton.isEnabled = memoViewModel.currentMemoDictionaryKeyIndex != 0
+    }
+    
+    
+    private func refreshMemos(shouldJumpToFirstDay: Bool){
+        let memos = MemoRepository.shared.readMemos
+        memoViewModel.setMemos(memos: memos, shouldJumpToFirstDay: shouldJumpToFirstDay)
+    }
+    
+    private func showMemosForSelectedMonth() {
+        
+        guard memoViewModel.orderedMemoDictionaryKeys.count > 0 else {
+            return
+        }
 
+        let memosForSelectedMonthKey = memoViewModel.orderedMemoDictionaryKeys[memoViewModel.currentMemoDictionaryKeyIndex]
+        let memosForSelectedMonth = memoViewModel.memosPerMonth[memosForSelectedMonthKey]
         
+        addMemosToStackView(memosForSelectedMonth: memosForSelectedMonth!)
+        updateNavbarTitle(month: memosForSelectedMonthKey.month, year: memosForSelectedMonthKey.year)
     }
     
-    func loadDummyMemos() {
+    private func addMemosToStackView(memosForSelectedMonth: [Memo]) {
+        dayStackView.removeAllArrangedSubviews()
+
+        //check which entrys should be grouped together
+        var memosForCurrentDay: [Memo] =  []
+        var currentDay: Int? = nil
         
-        WelcomeMemoRepository.createWelcomeMemos()
-         
-    }
-    
-    func splitMemosPerMonth(memos: [Memo]) -> [MonthAndYear: [Memo]]{
-        
-        var memosPerMonth: [MonthAndYear: [Memo]] = [:]
-        
-        memos.forEach { memo in
-            let monthAndYear = MonthAndYear(month: getMonthFromMemo(memo: memo), year: getYearFromMemo(memo: memo))
-            
-            if (memosPerMonth[monthAndYear] == nil) {
-                memosPerMonth[monthAndYear] = [memo]
+        memosForSelectedMonth.forEach {memo in
+            if (currentDay == nil || (currentDay == memo.day)) {
             } else {
-                memosPerMonth[monthAndYear]!.append(memo)
+                addDayToStackView(day: currentDay!, memos: memosForCurrentDay)
+                memosForCurrentDay.removeAll()
             }
-            
+            currentDay = memo.day
+            memosForCurrentDay.append(memo)
         }
         
-        return memosPerMonth
-        
+        addDayToStackView(day: currentDay!, memos: memosForCurrentDay)
     }
     
-  
-    func getYearFromMemo(memo: Memo) -> Int {
-        return memo.date!.get(.year).year!
+    private func addDayToStackView(day: Int, memos: [Memo]) {
+        let dayView = DayView()
+        dayView.configureView(day: "\(day)", memos: memos, viewControllerDelegate: self)
+        dayStackView.addArrangedSubview(dayView)
     }
     
-    func getMonthFromMemo(memo: Memo) -> Int{
-        return memo.date!.get(.month).month!
+    private func updateNavbarTitle(month: Int, year: Int) {
+        self.title = "\(CalendarService.monthName(monthNumber: month)) \(year)"
     }
-    
-    func getDayFromMemo(memo: Memo) -> Int {
-        return memo.date!.get(.day).day!
-    }
-    
-    
-    @IBAction func back(_ sender: Any) {
-        currentMemoDictionaryKeyIndex += 1
-        updateView()
-    }
-    
-    func monthName(monthNumber: Int) -> String {
-        return DateFormatter().monthSymbols[monthNumber - 1]
-
-    }
-    
-    @IBAction func newest(_ sender: Any) {
-        currentMemoDictionaryKeyIndex = 0
-        updateView()
-    }
-    
-    @IBAction func forward(_ sender: Any) {
-        currentMemoDictionaryKeyIndex -= 1
-            updateView()
-    }
-    
-  
     
 }
 
+//MARK: Extensions
+extension ViewController: AddMemoViewDelegate {
+    
+    func updateView(shouldJumpToFirstDay: Bool = false) {
+        updateView(shouldRefreshMemos: true, shouldJumpToFirstDay: shouldJumpToFirstDay)
+    }
+    
+}
+
+extension ViewController: MemoEntryViewDelegate {
+    func editMemo(memo: Memo) {
+        showEditDialog = true
+        currentEditingMemo = memo
+        performSegue(withIdentifier: showAddMemoViewSegueIdentifier, sender: self)
+    }
+}

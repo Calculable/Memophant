@@ -24,6 +24,12 @@
 		3D87F92026F343A600AEB79C /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87F91F26F343A600AEB79C /* DayView.swift */; };
 		3D87F92426F34B9600AEB79C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87F92326F34B9600AEB79C /* UIViewExtension.swift */; };
 		3DDD867826F4BCA300C420F1 /* WelcomeMemoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD867726F4BCA300C420F1 /* WelcomeMemoRepository.swift */; };
+		3DDD867A26F4C22F00C420F1 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD867926F4C22F00C420F1 /* UserDefaultsService.swift */; };
+		3DDD867F26F4C32A00C420F1 /* MemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD867E26F4C32A00C420F1 /* MemoViewModel.swift */; };
+		3DDD868126F4C53300C420F1 /* MemoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD868026F4C53300C420F1 /* MemoExtension.swift */; };
+		3DDD868426F4C6FC00C420F1 /* AddMemoViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD868326F4C6FC00C420F1 /* AddMemoViewDelegate.swift */; };
+		3DDD868726F4C77200C420F1 /* MemoEntryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD868626F4C77200C420F1 /* MemoEntryViewDelegate.swift */; };
+		3DDD868926F4C9D000C420F1 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD868826F4C9D000C420F1 /* CalendarService.swift */; };
 		3DE8715026F3507F00099C3F /* DayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE8714F26F3507F00099C3F /* DayView.xib */; };
 		3DE8715326F3721E00099C3F /* MemoEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE8715226F3721E00099C3F /* MemoEntryView.xib */; };
 		3DE8715726F3726300099C3F /* MemoEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE8715626F3726300099C3F /* MemoEntryView.swift */; };
@@ -71,6 +77,12 @@
 		3D87F91F26F343A600AEB79C /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		3D87F92326F34B9600AEB79C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		3DDD867726F4BCA300C420F1 /* WelcomeMemoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMemoRepository.swift; sourceTree = "<group>"; };
+		3DDD867926F4C22F00C420F1 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		3DDD867E26F4C32A00C420F1 /* MemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewModel.swift; sourceTree = "<group>"; };
+		3DDD868026F4C53300C420F1 /* MemoExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoExtension.swift; sourceTree = "<group>"; };
+		3DDD868326F4C6FC00C420F1 /* AddMemoViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoViewDelegate.swift; sourceTree = "<group>"; };
+		3DDD868626F4C77200C420F1 /* MemoEntryViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoEntryViewDelegate.swift; sourceTree = "<group>"; };
+		3DDD868826F4C9D000C420F1 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
 		3DE8714F26F3507F00099C3F /* DayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayView.xib; sourceTree = "<group>"; };
 		3DE8715126F3603C00099C3F /* Memophant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Memophant.entitlements; sourceTree = "<group>"; };
 		3DE8715226F3721E00099C3F /* MemoEntryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoEntryView.xib; sourceTree = "<group>"; };
@@ -126,6 +138,8 @@
 		3D3BAA5F26F30F0700D4F40B /* Memophant */ = {
 			isa = PBXGroup;
 			children = (
+				3DDD868226F4C6D800C420F1 /* DelegateProtocols */,
+				3DDD867B26F4C23200C420F1 /* Service */,
 				3DDD867426F4BB3000C420F1 /* Data */,
 				3DDD867326F4BB0900C420F1 /* Extensions */,
 				3DDD867226F4BAEA00C420F1 /* View Controller */,
@@ -186,6 +200,7 @@
 				3D58782726F45E9D0041B223 /* DateExtension.swift */,
 				3D58782926F464C70041B223 /* UIStackViewExtension.swift */,
 				3D58782D26F489800041B223 /* UIScrollViewExtension.swift */,
+				3DDD868026F4C53300C420F1 /* MemoExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -197,8 +212,27 @@
 				3D87F91926F3216A00AEB79C /* MemoRepository.swift */,
 				3D58782526F45DD30041B223 /* MonthAndYear.swift */,
 				3DDD867726F4BCA300C420F1 /* WelcomeMemoRepository.swift */,
+				3DDD867E26F4C32A00C420F1 /* MemoViewModel.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		3DDD867B26F4C23200C420F1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3DDD867926F4C22F00C420F1 /* UserDefaultsService.swift */,
+				3DDD868826F4C9D000C420F1 /* CalendarService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3DDD868226F4C6D800C420F1 /* DelegateProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				3DDD868326F4C6FC00C420F1 /* AddMemoViewDelegate.swift */,
+				3DDD868626F4C77200C420F1 /* MemoEntryViewDelegate.swift */,
+			);
+			path = DelegateProtocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,7 +368,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE8715926F37F4100099C3F /* AddMemoViewController.swift in Sources */,
+				3DDD868426F4C6FC00C420F1 /* AddMemoViewDelegate.swift in Sources */,
 				3D58782A26F464C70041B223 /* UIStackViewExtension.swift in Sources */,
+				3DDD868926F4C9D000C420F1 /* CalendarService.swift in Sources */,
 				3D3BAA6526F30F0700D4F40B /* ViewController.swift in Sources */,
 				3D87F92026F343A600AEB79C /* DayView.swift in Sources */,
 				3D87F91826F320A100AEB79C /* MemoModel.xcdatamodeld in Sources */,
@@ -345,8 +381,12 @@
 				3D87F91A26F3216A00AEB79C /* MemoRepository.swift in Sources */,
 				3D58782626F45DD30041B223 /* MonthAndYear.swift in Sources */,
 				3D58782E26F489800041B223 /* UIScrollViewExtension.swift in Sources */,
+				3DDD867A26F4C22F00C420F1 /* UserDefaultsService.swift in Sources */,
+				3DDD868126F4C53300C420F1 /* MemoExtension.swift in Sources */,
+				3DDD867F26F4C32A00C420F1 /* MemoViewModel.swift in Sources */,
 				3DE8715726F3726300099C3F /* MemoEntryView.swift in Sources */,
 				3D3BAA6326F30F0700D4F40B /* SceneDelegate.swift in Sources */,
+				3DDD868726F4C77200C420F1 /* MemoEntryViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

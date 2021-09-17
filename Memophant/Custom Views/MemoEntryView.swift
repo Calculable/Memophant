@@ -9,7 +9,8 @@ final class MemoEntryView: UIView {
     @IBOutlet weak var contentTextLabel: UITextView!
     
     var memo: Memo? = nil
-    var viewControllerDelegate: ViewController? = nil
+    var viewControllerDelegate: MemoEntryViewDelegate? = nil
+    let nibName = "MemoEntryView"
     
     
     override init(frame: CGRect) {
@@ -23,30 +24,20 @@ final class MemoEntryView: UIView {
     }
     
     private func configureView() {
-        guard let view = self.loadViewFromNib(nibName: "MemoEntryView") else { return }
+        guard let view = self.loadViewFromNib(nibName: nibName) else { return }
         view.frame = self.bounds
         self.addSubview(view)
+        setRoundedTimeLabelCorners()
+    }
+    
+    func setRoundedTimeLabelCorners() {
         timeLabel?.layer.masksToBounds = true
         timeLabel?.layer.cornerRadius = 8.0
-
-      
     }
     
     func configureView(memo: Memo, viewControllerDelegate: ViewController) {
-        
-        // initialize the date formatter and set the style
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        formatter.dateStyle = .none
-
-        // get the date time String from the date object
-        
-        let timeString = formatter.string(from: memo.date!) // October 8, 2016 at 10:48:53 PM
-        print(timeString)
-        
-        timeLabel.text = timeString
+        timeLabel.text = memo.date?.formatedTime
         contentTextLabel.text = memo.content!
-        
         self.memo = memo
         self.viewControllerDelegate = viewControllerDelegate
     }
