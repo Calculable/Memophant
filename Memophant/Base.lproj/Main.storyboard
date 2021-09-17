@@ -42,7 +42,7 @@
                                 <rect key="frame" x="0.0" y="96" width="320" height="340"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eAg-yd-gOq">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="685"/>
+                                        <rect key="frame" x="0.0" y="20" width="320" height="685"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hj9-nR-3Mb" userLabel="Day">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="685"/>
@@ -54,7 +54,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="eAg-yd-gOq" secondAttribute="trailing" id="42K-Rr-LtZ"/>
-                                    <constraint firstItem="eAg-yd-gOq" firstAttribute="top" secondItem="v9n-iv-0k3" secondAttribute="top" id="ACQ-rB-2pG"/>
+                                    <constraint firstItem="eAg-yd-gOq" firstAttribute="top" secondItem="v9n-iv-0k3" secondAttribute="top" constant="20" symbolic="YES" id="ACQ-rB-2pG"/>
                                     <constraint firstAttribute="bottom" secondItem="eAg-yd-gOq" secondAttribute="bottom" id="hCs-PL-xr4"/>
                                     <constraint firstItem="eAg-yd-gOq" firstAttribute="leading" secondItem="v9n-iv-0k3" secondAttribute="leading" id="mfW-jJ-NcD"/>
                                     <constraint firstItem="eAg-yd-gOq" firstAttribute="width" secondItem="v9n-iv-0k3" secondAttribute="width" id="pvo-5H-hd5"/>
