@@ -109,7 +109,9 @@ class ViewController: UIViewController {
         dayStackView.addArrangedSubview(dayView)
         
         
+        //Set Navbar Title
         
+        self.title = "\(monthName(monthNumber: memosForSelectedMonthKey.month)) \(memosForSelectedMonthKey.year)"
         
     }
     
@@ -170,6 +172,11 @@ class ViewController: UIViewController {
     @IBAction func back(_ sender: Any) {
         currentMemoDictionaryKeyIndex += 1
         updateView()
+    }
+    
+    func monthName(monthNumber: Int) -> String {
+        return DateFormatter().monthSymbols[monthNumber - 1]
+
     }
     
     @IBAction func newest(_ sender: Any) {
