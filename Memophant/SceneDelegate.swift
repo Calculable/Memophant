@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Memophant
-//
-//  Created by Jan on 16.09.21.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

@@ -1,10 +1,3 @@
-//
-//  DateExtension.swift
-//  Memophant
-//
-//  Created by Jan on 17.09.21.
-//
-
 import Foundation
 
 //See https://stackoverflow.com/questions/53356392/how-to-get-day-and-month-from-date-type-swift-4

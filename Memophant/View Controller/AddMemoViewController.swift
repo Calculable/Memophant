@@ -1,10 +1,3 @@
-//
-//  AddMemoViewController.swift
-//  Memophant
-//
-//  Created by Jan on 16.09.21.
-//
-
 import Foundation
 import UIKit
 
