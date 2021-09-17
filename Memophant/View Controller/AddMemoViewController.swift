@@ -47,9 +47,9 @@ class AddMemoViewController: UIViewController {
             
             if (editingMode) {
                 currentEditingMemo!.content = content
-                MemoRepository.shared.updateMemo(memo: currentEditingMemo!)
+                MemoRepository.shared.updateMemos()
             } else {
-                MemoRepository.shared.addMemo(content: content!)
+                MemoRepository.shared.createMemo(date: Date(), content: content!)
             }
         }
         

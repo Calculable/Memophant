@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
  
-        if (isFirstAppStartEver() && MemoRepository.shared.allMemos.isEmpty) {
+        if (isFirstAppStartEver() && MemoRepository.shared.readMemos.isEmpty) {
             loadDummyMemos()
         }
 
@@ -73,7 +73,7 @@ class ViewController: UIViewController {
     }
     
     func refreshMemos(shouldJumpToFirstDay: Bool) {
-        let memos = MemoRepository.shared.allMemos
+        let memos = MemoRepository.shared.readMemos
         
         memosPerMonth = splitMemosPerMonth(memos: memos)
         orderedMemoDictionaryKeys = memosPerMonth.keys.sorted { (a,b) in
@@ -185,9 +185,7 @@ class ViewController: UIViewController {
     
     func loadDummyMemos() {
         
-        MemoRepository.shared.readDummyMemos().forEach { memo in
-            MemoRepository.shared.updateMemo(memo: memo)
-        }
+        WelcomeMemoRepository.createWelcomeMemos()
          
     }
     
