@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         return false
     }
     
-    func refreshMemos() {
+    func refreshMemos(shouldJumpToFirstDay: Bool) {
         let memos = MemoRepository.shared.allMemos
         
         memosPerMonth = splitMemosPerMonth(memos: memos)
@@ -97,7 +97,10 @@ class ViewController: UIViewController {
             
         }
         
-        currentMemoDictionaryKeyIndex = 0
+        if (shouldJumpToFirstDay || currentMemoDictionaryKeyIndex >= orderedMemoDictionaryKeys.count) {
+            currentMemoDictionaryKeyIndex = 0
+        }
+        
     }
     
     func updateButtonEnabledState() {
@@ -107,19 +110,21 @@ class ViewController: UIViewController {
 
     }
     
-    func updateView(shouldRefreshMemos: Bool = false) {
+    func updateView(shouldRefreshMemos: Bool = false, shouldJumpToFirstDay: Bool = false) {
         
         if (shouldRefreshMemos) {
-            refreshMemos()
+            refreshMemos(shouldJumpToFirstDay: shouldJumpToFirstDay)
         }
         
+        updateButtonEnabledState()
+        dayStackView.isHidden = orderedMemoDictionaryKeys.isEmpty
         
         
         if orderedMemoDictionaryKeys.count == 0 {
             return
         } else {
             
-            updateButtonEnabledState()
+            
             
             dayStackView.removeAllArrangedSubviews()
         
@@ -155,6 +160,8 @@ class ViewController: UIViewController {
                 
             }
             
+        
+            
             
         }
         
@@ -171,7 +178,14 @@ class ViewController: UIViewController {
         }
         
         //Scroll on Top of Scroll View
-        scrollView.scrollToTop()
+        
+       
+        
+        
+        if (shouldJumpToFirstDay) {
+            scrollView.scrollToTop()
+        }
+        
 
         
     }

@@ -31,7 +31,7 @@ class AddMemoViewController: UIViewController {
             
         } else {
             titleLabel.text = "Add Memo"
-            deleteOrDiscardMemoButton.setTitle("Discard", for: .normal)
+            deleteOrDiscardMemoButton.setTitle("Cancel", for: .normal)
             deleteOrDiscardMemoButton.setTitleColor(.systemPurple, for: .normal)
         }
     }
@@ -60,7 +60,7 @@ class AddMemoViewController: UIViewController {
             }
         }
         
-        viewControllerDelegate?.updateView(shouldRefreshMemos: true)
+        viewControllerDelegate?.updateView(shouldRefreshMemos: true, shouldJumpToFirstDay: !editingMode)
         dismiss(animated: true, completion: nil)
     }
     
@@ -77,16 +77,30 @@ class AddMemoViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { _ in
                 print("Should delete")
                 MemoRepository.shared.deleteMemo(memo: self.currentEditingMemo!)
-                self.viewControllerDelegate?.updateView(shouldRefreshMemos: true)
+                self.viewControllerDelegate?.updateView(shouldRefreshMemos: true, shouldJumpToFirstDay: false)
                 self.dismiss(animated: true, completion: nil)
             })
             
-            
-
             self.present(alert, animated: true)
             
         } else {
-            dismiss(animated: true, completion: nil)
+            
+            if (contentTextView.text.isEmpty) {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                let alert = UIAlertController(title: "Cancel", message: "Do you want to discard the memo?", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+
+                
+                alert.addAction(UIAlertAction(title: "Yes", style: .destructive) { _ in
+                    self.dismiss(animated: true, completion: nil)
+                })
+                
+                self.present(alert, animated: true)
+                
+            }
+           
         }
     }
     
