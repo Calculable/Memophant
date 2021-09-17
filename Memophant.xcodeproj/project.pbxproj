@@ -124,26 +124,17 @@
 		3D3BAA5F26F30F0700D4F40B /* Memophant */ = {
 			isa = PBXGroup;
 			children = (
+				3DDD867426F4BB3000C420F1 /* Data */,
+				3DDD867326F4BB0900C420F1 /* Extensions */,
+				3DDD867226F4BAEA00C420F1 /* View Controller */,
+				3DDD867126F4BAD000C420F1 /* Custom Views */,
 				3DE8715126F3603C00099C3F /* Memophant.entitlements */,
 				3D3BAA6026F30F0700D4F40B /* AppDelegate.swift */,
 				3D3BAA6226F30F0700D4F40B /* SceneDelegate.swift */,
-				3D3BAA6426F30F0700D4F40B /* ViewController.swift */,
 				3D3BAA6626F30F0700D4F40B /* Main.storyboard */,
 				3D3BAA6926F30F0B00D4F40B /* Assets.xcassets */,
 				3D3BAA6B26F30F0B00D4F40B /* LaunchScreen.storyboard */,
 				3D3BAA6E26F30F0B00D4F40B /* Info.plist */,
-				3D87F91626F320A100AEB79C /* MemoModel.xcdatamodeld */,
-				3D87F91926F3216A00AEB79C /* MemoRepository.swift */,
-				3D87F91F26F343A600AEB79C /* DayView.swift */,
-				3D87F92326F34B9600AEB79C /* UIViewExtension.swift */,
-				3DE8714F26F3507F00099C3F /* DayView.xib */,
-				3DE8715226F3721E00099C3F /* MemoEntryView.xib */,
-				3DE8715626F3726300099C3F /* MemoEntryView.swift */,
-				3DE8715826F37F4100099C3F /* AddMemoViewController.swift */,
-				3D58782526F45DD30041B223 /* MonthAndYear.swift */,
-				3D58782726F45E9D0041B223 /* DateExtension.swift */,
-				3D58782926F464C70041B223 /* UIStackViewExtension.swift */,
-				3D58782D26F489800041B223 /* UIScrollViewExtension.swift */,
 			);
 			path = Memophant;
 			sourceTree = "<group>";
@@ -164,6 +155,47 @@
 				3D3BAA8426F30F0B00D4F40B /* Info.plist */,
 			);
 			path = MemophantUITests;
+			sourceTree = "<group>";
+		};
+		3DDD867126F4BAD000C420F1 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D87F91F26F343A600AEB79C /* DayView.swift */,
+				3DE8714F26F3507F00099C3F /* DayView.xib */,
+				3DE8715226F3721E00099C3F /* MemoEntryView.xib */,
+				3DE8715626F3726300099C3F /* MemoEntryView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		3DDD867226F4BAEA00C420F1 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D3BAA6426F30F0700D4F40B /* ViewController.swift */,
+				3DE8715826F37F4100099C3F /* AddMemoViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		3DDD867326F4BB0900C420F1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3D87F92326F34B9600AEB79C /* UIViewExtension.swift */,
+				3D58782726F45E9D0041B223 /* DateExtension.swift */,
+				3D58782926F464C70041B223 /* UIStackViewExtension.swift */,
+				3D58782D26F489800041B223 /* UIScrollViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3DDD867426F4BB3000C420F1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3D87F91626F320A100AEB79C /* MemoModel.xcdatamodeld */,
+				3D87F91926F3216A00AEB79C /* MemoRepository.swift */,
+				3D58782526F45DD30041B223 /* MonthAndYear.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
