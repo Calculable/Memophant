@@ -26,7 +26,7 @@ final class DayView: UIView {
         setShadow()
     }
     
-    func setShadow() {
+    private func setShadow() {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.5
         layer.shadowOffset = .zero

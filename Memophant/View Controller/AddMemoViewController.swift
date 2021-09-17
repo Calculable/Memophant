@@ -60,7 +60,7 @@ class AddMemoViewController: UIViewController {
     }
     
     //MARK: View Methods
-    func deleteMemo() {
+    private func deleteMemo() {
         //Ask if memo should be deleted
         let alert = UIAlertController(title: UIText.deleteAlertTitle, message: UIText.deleteAlertMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: UIText.no, style: .default, handler: nil))
@@ -72,7 +72,7 @@ class AddMemoViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-    func discardMemo() {
+    private func discardMemo() {
         if (contentTextView.text.isEmpty) {
             self.dismiss(animated: true, completion: nil)
         } else {
@@ -85,7 +85,7 @@ class AddMemoViewController: UIViewController {
         }
     }
     
-    func updateViewForCreateOrEdit() {
+    private func updateViewForCreateOrEdit() {
         if (editingMode) {
             titleLabel.text = UIText.editMemo
             deleteOrDiscardMemoButton.setTitle(UIText.delete, for: .normal)

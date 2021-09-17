@@ -23,6 +23,10 @@ final class MemoEntryView: UIView {
         self.configureView()
     }
     
+    @IBAction func edit(_ sender: Any) {
+        viewControllerDelegate?.editMemo(memo: memo!)
+    }
+    
     private func configureView() {
         guard let view = self.loadViewFromNib(nibName: nibName) else { return }
         view.frame = self.bounds
@@ -30,7 +34,7 @@ final class MemoEntryView: UIView {
         setRoundedTimeLabelCorners()
     }
     
-    func setRoundedTimeLabelCorners() {
+    private func setRoundedTimeLabelCorners() {
         timeLabel?.layer.masksToBounds = true
         timeLabel?.layer.cornerRadius = 8.0
     }
@@ -40,11 +44,6 @@ final class MemoEntryView: UIView {
         contentTextLabel.text = memo.content!
         self.memo = memo
         self.viewControllerDelegate = viewControllerDelegate
-    }
-    
-    
-    @IBAction func edit(_ sender: Any) {
-        viewControllerDelegate?.editMemo(memo: memo!)
     }
     
 }
