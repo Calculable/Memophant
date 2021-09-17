@@ -60,16 +60,27 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
  
+        if (isFirstAppStartEver() && MemoRepository.shared.allMemos.isEmpty) {
+            loadDummyMemos()
+        }
+
         updateView(shouldRefreshMemos: true)
     
-        
-        
+    }
+    
+    func isFirstAppStartEver() -> Bool {
+        let firstAppStart = UserDefaults.standard.object(forKey: "firstAppStart")
        
-
+        if (firstAppStart == nil) {
+            UserDefaults.standard.set(false, forKey: "firstAppStart")
+            return true
+        }
+        
+        return false
     }
     
     func refreshMemos() {
-        let memos = loadDummyMemos()
+        let memos = MemoRepository.shared.allMemos
         
         memosPerMonth = splitMemosPerMonth(memos: memos)
         orderedMemoDictionaryKeys = memosPerMonth.keys.sorted { (a,b) in
@@ -165,25 +176,12 @@ class ViewController: UIViewController {
         
     }
     
-    func loadDummyMemos() -> [Memo] {
-        //MemoRepository.shared.deleteAllMemos()
-        
-        /*let memos0 = MemoRepository.shared.allMemos
-        
-        
-        memos0.forEach { memo in
-            print(memo.content)
-            
-        }
-        
+    func loadDummyMemos() {
         
         MemoRepository.shared.readDummyMemos().forEach { memo in
             MemoRepository.shared.updateMemo(memo: memo)
         }
-         */
-        
-        let memos = MemoRepository.shared.allMemos
-        return memos
+         
     }
     
     func splitMemosPerMonth(memos: [Memo]) -> [MonthAndYear: [Memo]]{

@@ -71,6 +71,9 @@ class AddMemoViewController: UIViewController {
             
             let alert = UIAlertController(title: "Delete memo", message: "Do you want to delete the memo?", preferredStyle: .alert)
 
+            alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+
+            
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { _ in
                 print("Should delete")
                 MemoRepository.shared.deleteMemo(memo: self.currentEditingMemo!)
@@ -79,8 +82,6 @@ class AddMemoViewController: UIViewController {
             })
             
             
-            alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-
 
             self.present(alert, animated: true)
             
