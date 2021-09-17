@@ -29,6 +29,11 @@ final class DayView: UIView {
         view.frame = self.bounds
         self.addSubview(view)
         
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 1
+        layer.shadowOffset = .zero
+        layer.shadowRadius = 5
+        
     }
     
     

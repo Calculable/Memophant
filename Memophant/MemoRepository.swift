@@ -102,8 +102,30 @@ class MemoRepository {
             return memo
         }()
         
+        let memo4: Memo = {
+            let memo = Memo(context: persistentContainer.viewContext)
+            memo.content = "The people who are crazy enough to think they can change the world are the ones who do."
+            memo.date = Date(timeIntervalSinceNow: -600000)
+            return memo
+        }()
         
-        return [memo1, memo2, memo3]
+        let memo5: Memo = {
+            let memo = Memo(context: persistentContainer.viewContext)
+            memo.content = "The people who are crazy enough to think they can change the world are the ones who do."
+            memo.date = Date(timeIntervalSinceNow: -6000000)
+            return memo
+        }()
+        
+        let memo6: Memo = {
+            let memo = Memo(context: persistentContainer.viewContext)
+            memo.content = "The people who are crazy enough to think they can change the world are the ones who do."
+            memo.date = Date(timeIntervalSinceNow: -60000000)
+            return memo
+        }()
+        
+        
+        
+        return [memo1, memo2, memo3, memo4, memo5, memo6]
        
         
     }

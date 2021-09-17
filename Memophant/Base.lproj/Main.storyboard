@@ -19,17 +19,29 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJx-AH-Reu">
                                 <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="&lt; August 2021" image="chevron.backward" catalog="system" id="6WV-3s-gjf"/>
+                                    <barButtonItem title="&lt; August 2021" image="chevron.backward" catalog="system" id="6WV-3s-gjf" userLabel="back">
+                                        <connections>
+                                            <action selector="back:" destination="BYZ-38-t0r" id="9AJ-uI-XFt"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rwO-Fw-jpU"/>
-                                    <barButtonItem title="Current" id="3Fg-Z2-iAB"/>
+                                    <barButtonItem title="Newest" id="3Fg-Z2-iAB">
+                                        <connections>
+                                            <action selector="newest:" destination="BYZ-38-t0r" id="jU3-aO-Fjx"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="F4O-mH-wAa"/>
-                                    <barButtonItem title="Oktober 2021 &gt;" image="chevron.forward" catalog="system" id="JlJ-rM-owf"/>
+                                    <barButtonItem title="Oktober 2021 &gt;" image="chevron.forward" catalog="system" id="JlJ-rM-owf" userLabel="forward">
+                                        <connections>
+                                            <action selector="forward:" destination="BYZ-38-t0r" id="OFm-oX-BoA"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9n-iv-0k3">
                                 <rect key="frame" x="0.0" y="96" width="320" height="340"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="eAg-yd-gOq">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eAg-yd-gOq">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="685"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hj9-nR-3Mb" userLabel="Day">
@@ -37,7 +49,7 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -75,7 +87,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="6WV-3s-gjf" id="Hz7-mA-eOn"/>
                         <outlet property="dayStackView" destination="eAg-yd-gOq" id="CpE-JG-O11"/>
+                        <outlet property="forwardButton" destination="JlJ-rM-owf" id="blU-o9-IVC"/>
+                        <outlet property="goToNewestButton" destination="3Fg-Z2-iAB" id="Fut-1c-nqI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -145,7 +160,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3AV-gz-mcr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="xCR-YL-l05">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
