@@ -16,6 +16,20 @@ class ViewController: UIViewController {
     var orderedMemoDictionaryKeys : [MonthAndYear] = []
     var currentMemoDictionaryKeyIndex = 0
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier  == "showAddMemoView" {
+            let destination = segue.destination as! AddMemoViewController
+            destination.viewControllerDelegate = self
+        }
+    }
+    
+    @IBAction func addMemo(_ sender: Any) {
+        performSegue(withIdentifier: "showAddMemoView", sender: self)
+
+    }
+    
     
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var goToNewestButton: UIBarButtonItem!
@@ -25,7 +39,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
+        updateView(shouldRefreshMemos: true)
+    
         
+        
+       
+
+    }
+    
+    func refreshMemos() {
         let memos = loadDummyMemos()
         
         memosPerMonth = splitMemosPerMonth(memos: memos)
@@ -42,16 +65,8 @@ class ViewController: UIViewController {
             return false
             
         }
-           
         
-        
-        
-       updateView()
-    
-        
-        
-       
-
+        currentMemoDictionaryKeyIndex = 0
     }
     
     func updateButtonEnabledState() {
@@ -61,12 +76,21 @@ class ViewController: UIViewController {
 
     }
     
-    func updateView() {
+    func updateView(shouldRefreshMemos: Bool = false) {
         
-        updateButtonEnabledState()
+        if (shouldRefreshMemos) {
+            refreshMemos()
+        }
         
-        dayStackView.removeAllArrangedSubviews()
         
+        
+        if orderedMemoDictionaryKeys.count == 0 {
+            return
+        } else {
+            
+            updateButtonEnabledState()
+            
+            dayStackView.removeAllArrangedSubviews()
         
         let memosForSelectedMonthKey = orderedMemoDictionaryKeys[currentMemoDictionaryKeyIndex]
         let memosForSelectedMonth = memosPerMonth[memosForSelectedMonthKey]
@@ -112,13 +136,19 @@ class ViewController: UIViewController {
         //Set Navbar Title
         
         self.title = "\(monthName(monthNumber: memosForSelectedMonthKey.month)) \(memosForSelectedMonthKey.year)"
+            
+        }
+        
+        //Scroll on Top of Scroll View
+        scrollView.scrollToTop()
+
         
     }
     
     func loadDummyMemos() -> [Memo] {
-        MemoRepository.shared.deleteAllMemos()
+        //MemoRepository.shared.deleteAllMemos()
         
-        let memos0 = MemoRepository.shared.allMemos
+        /*let memos0 = MemoRepository.shared.allMemos
         
         
         memos0.forEach { memo in
@@ -130,7 +160,7 @@ class ViewController: UIViewController {
         MemoRepository.shared.readDummyMemos().forEach { memo in
             MemoRepository.shared.updateMemo(memo: memo)
         }
-               
+         */
         
         let memos = MemoRepository.shared.allMemos
         return memos
