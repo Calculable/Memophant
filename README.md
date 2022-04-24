@@ -1,6 +1,6 @@
 # Memophant
 
-Memophant ist eine Swift-App zum speichern von spontanen Gedanken.
+Memophant is a Swift app to store your thoughts.
 
-Mehr Informationen: https://www.jan-huber.ch/memophant
+More information: https://www.jan-huber.ch/memophant
 
